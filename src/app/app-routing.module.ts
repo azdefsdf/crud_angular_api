@@ -4,6 +4,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 const routes: Routes = [
     {path: 'employees', component: EmployeeListComponent},
@@ -12,6 +13,8 @@ const routes: Routes = [
     {path: 'update-employee', component: UpdateEmployeeComponent},
     {path: 'delete-employee', component: DeleteEmployeeComponent},
     {path: 'delete-employee/:id', component: DeleteEmployeeComponent},
+    {path: 'employee-details/:id', component: EmployeeDetailsComponent},
+    {path: 'employee-details', component: EmployeeDetailsComponent},
     {path: '', redirectTo: 'employees', pathMatch:'full'}
 
 

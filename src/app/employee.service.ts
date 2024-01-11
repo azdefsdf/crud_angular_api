@@ -32,4 +32,13 @@ export class EmployeeService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
+  detailsEmployee(id: number): Observable<Employee> {
+    const url = `${this.baseURL}/employees/${id}`;
+    return this.httpClient.get<Employee>(url);
+  }
+
+  searchEmployee(id: number): Observable<Employee> {
+    const url = `${this.baseURL}/employees/${id}`;
+    return this.httpClient.get<Employee>(url);
+  }
 }

@@ -1,0 +1,13 @@
+<div *ngIf="employee">
+    <h2>Employee Details</h2>
+    <ul>
+      <li><strong>First Nom:</strong> {{ employee.firstName }}</li>
+      <li><strong>Last Name:</strong> {{ employee.lastName }}</li>
+      <li><strong>Email:</strong> {{ employee.emailId }}</li>
+      <!-- Ajoutez d'autres propriétés de l'employé ici -->
+    </ul>
+  </div>
+  
+  <div *ngIf="!employee">
+    <p>Aucun employé trouvé</p>
+  </div>

@@ -8,7 +8,11 @@ import { FormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
-
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CommonModule } from '@angular/common';
+import { CustomFilterPipe } from './custom-filter-pipe.pipe';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -16,14 +20,18 @@ import { DeleteEmployeeComponent } from './delete-employee/delete-employee.compo
     EmployeeListComponent,
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
-    DeleteEmployeeComponent
+    DeleteEmployeeComponent,
+    EmployeeDetailsComponent,
+    CustomFilterPipe
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

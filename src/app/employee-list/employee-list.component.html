@@ -7,7 +7,7 @@
       <span class="fs-4">Employee List Update</span>
     </a>
     <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-      <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      <input  type="text" name="Search" [(ngModel)]="searchText" class="form-control" placeholder="Search..." aria-label="Search">
     </form>
   </div>
 </header>
@@ -23,17 +23,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of employees | filter:searchText | paginate: {itemsPerPage: 3, currentPage: p}">
       <th>{{employee.id}}</th>
       <td>{{employee.firstName}}</td>
       <td>{{employee.lastName}}</td>
       <td>{{employee.emailId}}</td>
       <td>
-          <button (click) = "updateEmployee(employee.id)" class="btn btn-info">Update</button>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click) = "updateEmployee(employee.id)"  type="button" class="btn btn-info">Update</button>
+        <button (click) = 'deleteEmployee(employee.id)' type="button" class="btn btn-danger">Delete</button>
+        <button (click) = 'employeeDetails(employee.id)' type="button" class="btn btn-warning">Details</button>
+      </div>
       </td>
-      <td>
-        <button (click) = 'deleteEmployee(employee.id)' class="btn btn-danger" style="margin-left:0px;">Delete</button>
-    </td>
     </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
